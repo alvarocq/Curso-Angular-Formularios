@@ -1,6 +1,6 @@
 <h4>Formularios <small>template</small></h4>
 <hr>
-<form (ngSubmit)="guardar()" novalidate="">
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
 
   <div>
 
@@ -13,7 +13,7 @@
                placeholder="Nombre"
                name="nombre"
                minlength="5"
-               ngModel>
+               [(ngModel)]="usuario.nombre">
       </div>
     </div>
 
@@ -25,8 +25,8 @@
                type="text"
                placeholder="Apellido"
                name="apellido"
-               minlength="5"
-               ngModel>
+               [(ngModel)]="usuario.apellido">
+                <!-- Ponemos () dentro del [] para que a parte de escuchar, emita los cambios -->
       </div>
     </div>
 
@@ -40,8 +40,8 @@
              type="email"
              placeholder="Correo electrónico"
              name="email"
-             minlength="5"
-             ngModel>
+             [(ngModel)]="usuario.email"
+             required>
     </div>
   </div>
 
