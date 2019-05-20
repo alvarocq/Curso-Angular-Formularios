@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './template.component.html',
   styles: []
 })
-export class TemplateComponent implements OnInit {
+export class TemplateComponent {
 
   constructor() { }
 
-  ngOnInit() {
+
+  guardar(){
+    console.log("Formulario posteado");
   }
 
 }
